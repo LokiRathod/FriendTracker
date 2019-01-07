@@ -3,7 +3,6 @@ import 'package:altorumleren_friendtracke/Utils/MyNavigator.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 class LogInScreen extends StatefulWidget {
   @override
   _LogInScreenState createState() => _LogInScreenState();
@@ -21,7 +20,10 @@ class _LogInScreenState extends State<LogInScreen> {
           padding: const EdgeInsets.all(20.0),
           child: ListView(
             children: <Widget>[
-              Text(Constants.appName, style: TextStyle(fontSize: 25.0),),
+              Text(
+                Constants.appName,
+                style: TextStyle(fontSize: 25.0),
+              ),
               Container(
                 child: Form(
                   key: formKey,
@@ -34,12 +36,13 @@ class _LogInScreenState extends State<LogInScreen> {
                           hintText: Constants.emailID,
                           labelText: Constants.emailID,
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0)),),
-                        validator: (mailID) =>
-                        !mailID.contains("@") ? Constants.emailIDError : null,
+                              borderRadius: BorderRadius.circular(10.0)),
+                        ),
+                        validator: (mailID) => !mailID.contains("@")
+                            ? Constants.emailIDError
+                            : null,
                         onSaved: (mailID) => _emailID = mailID,
                       ),
-
                       SizedBox(height: 15.0),
                       TextFormField(
                         obscureText: true,
@@ -49,26 +52,34 @@ class _LogInScreenState extends State<LogInScreen> {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0)),
                         ),
-                        validator: (password) =>
-                        password.length <= 7
+                        validator: (password) => password.length <= 7
                             ? Constants.passwordError
                             : null,
                         onSaved: (password) => _password = password,
                       ),
-
                     ],
                   ),
                 ),
               ),
-
-              SizedBox(height: 25.0,),
-              RaisedButton(onPressed: formValidator,
+              SizedBox(
+                height: 25.0,
+              ),
+              RaisedButton(
+                onPressed: formValidator,
                 color: Colors.green,
                 child: Text(
-                  Constants.login, style: TextStyle(color: Colors.white),),
+                  Constants.login,
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              SizedBox(height: 20.0,),
-              FlatButton(onPressed: (){ MyNavigator.goToLogInScreen(context);}, child: Text(Constants.createAccout))
+              SizedBox(
+                height: 20.0,
+              ),
+              FlatButton(
+                  onPressed: () {
+                    MyNavigator.goToRegisterScreen(context);
+                  },
+                  child: Text(Constants.createAccout))
             ],
           ),
         ),
@@ -80,15 +91,13 @@ class _LogInScreenState extends State<LogInScreen> {
     var form = formKey.currentState;
     if (form.validate()) {
       form.save();
-      FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: _emailID, password: _password)
+      FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: _emailID, password: _password)
           .then((FirebaseUser user) {
-            MyNavigator.goToUserListScreen(context);
-      })
-          .catchError((e) {
-            print(e);
+        MyNavigator.goToUserListScreen(context);
+      }).catchError((e) {
+        print(e);
       });
     }
   }
-
 }

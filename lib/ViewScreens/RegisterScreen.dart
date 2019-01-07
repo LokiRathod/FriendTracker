@@ -1,4 +1,3 @@
-import 'package:altorumleren_friendtracke/NetworkCalls/UserCredentials.dart';
 import 'package:altorumleren_friendtracke/Utils/Constants.dart';
 import 'package:altorumleren_friendtracke/Utils/MyNavigator.dart';
 import 'package:flutter/material.dart';
@@ -115,7 +114,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               SizedBox(height: 20.0,),
-              FlatButton(onPressed: (){ MyNavigator.goToLogInScreen(context);}, child: Text(Constants.login))
+              FlatButton(onPressed: (){ MyNavigator.goToLogInScreen(context);}, child: Text(Constants.alreadyAccout))
             ],
           ),
         ),

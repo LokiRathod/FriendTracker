@@ -1,6 +1,5 @@
 import 'package:altorumleren_friendtracke/ViewScreens/LogInScreen.dart';
 import 'package:altorumleren_friendtracke/ViewScreens/RegisterScreen.dart';
-import 'package:altorumleren_friendtracke/ViewScreens/SignInScreen.dart';
 import 'package:flutter/material.dart';
 
 class TabsCredentialScreen extends StatefulWidget {

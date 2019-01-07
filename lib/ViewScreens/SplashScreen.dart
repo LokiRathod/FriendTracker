@@ -1,4 +1,4 @@
-import 'package:altorumleren_friendtracke/NetworkCalls/UserCredentials.dart';
+import 'package:altorumleren_friendtracke/Utils/UserCredentials.dart';
 import 'package:altorumleren_friendtracke/Utils/MyNavigator.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         Duration(seconds: 3),
-        () => UserCredentials().isLoggedIn()
+        () => isLogIn
             ? MyNavigator.goToRegisterScreen(context)
             : MyNavigator.goToLogInScreen(context));
   }

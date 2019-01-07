@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-     home: TabsCredentialScreen(),
-    //  home: SplashScreen(),
+     //home: TabsCredentialScreen(),
+      home: SplashScreen(),
     );
   }
 }

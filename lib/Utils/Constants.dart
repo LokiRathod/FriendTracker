@@ -5,6 +5,7 @@ class Constants  {
   // Strings
   static const String appName = "AltorumLeren Friend Tracker";
   static const String createAccout = "Create an Accout with AltorumLeren";
+  static const String alreadyAccout = "Alreadey have an Accout LogIn";
   static const String userName = "Name";
   static const String emailID = "Email Address";
   static const String password = "Password";

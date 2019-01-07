@@ -18,7 +18,6 @@ class _UserListScreenState extends State<UserListScreen> {
   var currentLocation;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Geolocator().getCurrentPosition().then((currLoc){
       setState(() {

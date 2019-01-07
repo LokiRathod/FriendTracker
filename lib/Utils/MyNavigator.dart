@@ -1,6 +1,4 @@
 import 'package:altorumleren_friendtracke/ViewScreens/LogInScreen.dart';
-import 'package:altorumleren_friendtracke/ViewScreens/MapScreen.dart';
-import 'package:altorumleren_friendtracke/ViewScreens/MembersListScreen.dart';
 import 'package:altorumleren_friendtracke/ViewScreens/RegisterScreen.dart';
 import 'package:altorumleren_friendtracke/ViewScreens/TabsCredentialScreen.dart';
 import 'package:altorumleren_friendtracke/ViewScreens/UserListScreen.dart';
@@ -39,20 +37,13 @@ class MyNavigator  {
 
   // Go to user list Screen
   static void goToUserListScreen(BuildContext context) {
-   // Navigator.of(context).pop();
-    Navigator.of(context).push(new MaterialPageRoute<dynamic>(
+    Navigator.of(context).pop();
+    Navigator.of(context).pushReplacement(new MaterialPageRoute<dynamic>(
       builder: (BuildContext context) {
         return UserListScreen();
       },
     ));
   }
 
-  // Go to user list Screen
-  static void goToMembersListScreen(BuildContext context) {
-    Navigator.of(context).push(new MaterialPageRoute<dynamic>(
-      builder: (BuildContext context) {
-        return MembersListScreen();
-      },
-    ));
-  }
+
 }
