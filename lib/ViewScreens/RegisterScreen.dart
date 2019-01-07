@@ -39,6 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Constants.createAccout,
                 style: TextStyle(fontSize: 25.0),
               ),
+              SizedBox(height: 30.0,),
               Container(
                 child: Form(
                   key: formKey,

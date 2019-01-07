@@ -20,10 +20,12 @@ class _LogInScreenState extends State<LogInScreen> {
           padding: const EdgeInsets.all(20.0),
           child: ListView(
             children: <Widget>[
+              SizedBox(height: 50.0,),
               Text(
                 Constants.appName,
                 style: TextStyle(fontSize: 25.0),
               ),
+              SizedBox(height: 50.0,),
               Container(
                 child: Form(
                   key: formKey,

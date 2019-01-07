@@ -52,7 +52,7 @@ class _UserListScreenState extends State<UserListScreen> {
         stream: Firestore.instance.collection("members").snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
-            return Text("Loading... !!!");
+            return Center(child: Text("Loading... !!!",style: TextStyle(fontSize: 20.0),),);
           } else {
             return new ListView(
               children: snapshot.data.documents.map((document) {
