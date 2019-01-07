@@ -13,7 +13,7 @@ class _TabsCredentialScreenState extends State<TabsCredentialScreen> {
     return DefaultTabController(
           length: 2,
           child: Scaffold(
-            appBar: new PreferredSize(
+            appBar: PreferredSize(
               preferredSize: Size.fromHeight(kToolbarHeight),
               child: Container(
                 color: Colors.green,
@@ -23,7 +23,7 @@ class _TabsCredentialScreenState extends State<TabsCredentialScreen> {
                       Expanded(child: new Container(
                         height: 80.0,
                       )),
-                      new TabBar(
+                      TabBar(
                         tabs: [
                           new Text("SIGN IN"),
                           new Text("SIGN UP")],
@@ -34,8 +34,8 @@ class _TabsCredentialScreenState extends State<TabsCredentialScreen> {
               ),
             ),
             body: TabBarView(children: [
-              new LogInScreen(),
-              new RegisterScreen(),
+              LogInScreen(),
+              RegisterScreen(),
             ]),
           ),
     );

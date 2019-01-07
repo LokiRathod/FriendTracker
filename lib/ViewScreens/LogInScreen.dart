@@ -2,6 +2,8 @@ import 'package:altorumleren_friendtracke/Utils/Constants.dart';
 import 'package:altorumleren_friendtracke/Utils/MyNavigator.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -30,7 +32,6 @@ class _LogInScreenState extends State<LogInScreen> {
                 child: Form(
                   key: formKey,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       SizedBox(height: 15.0),
                       TextFormField(
@@ -96,10 +97,16 @@ class _LogInScreenState extends State<LogInScreen> {
       FirebaseAuth.instance
           .signInWithEmailAndPassword(email: _emailID, password: _password)
           .then((FirebaseUser user) {
+        _saveValues();
         MyNavigator.goToUserListScreen(context);
       }).catchError((e) {
         print(e);
       });
     }
+  }
+
+  _saveValues() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("isLogIn", true);
   }
 }

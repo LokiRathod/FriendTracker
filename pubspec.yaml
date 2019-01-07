@@ -22,6 +22,7 @@ dependencies:
   http: any
   firebase_auth:
   cloud_firestore: ^0.7.4
+  shared_preferences: ^0.4.2
   google_maps_flutter:
   geolocator: ^2.1.0
   crypto: ^2.0.6

@@ -26,7 +26,7 @@ class MyNavigator  {
   }
 
   // Go to LogIn Screen
-  static void goToCredentialsScreen(BuildContext context) {
+  static void goToTabCredentialsScreen(BuildContext context) {
     Navigator.of(context).pop();
     Navigator.of(context).pushReplacement(new MaterialPageRoute<dynamic>(
       builder: (BuildContext context) {

@@ -7,6 +7,8 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class UserListScreen extends StatefulWidget {
   @override
@@ -40,6 +42,7 @@ class _UserListScreenState extends State<UserListScreen> {
             ),
             onPressed: () {
               FirebaseAuth.instance.signOut().then((value) {
+                _removeValues;
                 MyNavigator.goToLogInScreen(context);
               }).catchError((e) {
                 print(e);
@@ -78,5 +81,10 @@ class _UserListScreenState extends State<UserListScreen> {
         },
       ),
     );
+  }
+
+  _removeValues() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove("isLogIn");
   }
 }

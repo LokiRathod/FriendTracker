@@ -2,6 +2,8 @@ import 'package:altorumleren_friendtracke/Utils/UserCredentials.dart';
 import 'package:altorumleren_friendtracke/Utils/MyNavigator.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -14,6 +16,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    getSharedPreferences();
+    print("isLogIn: ${isLogIn}");
     Timer(
         Duration(seconds: 3),
         () => isLogIn
@@ -21,6 +25,11 @@ class _SplashScreenState extends State<SplashScreen> {
             : MyNavigator.goToLogInScreen(context));
   }
 
+
+  getSharedPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    isLogIn = prefs.getBool("isLogIn") ?? false;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -79,6 +81,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           hintText: Constants.password,
                           labelText: Constants.password,
                         ),
+                        obscureText: true,
                         validator: (password) => password.length <= 7
                             ? Constants.passwordError
                             : null,
@@ -92,6 +95,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           hintText: Constants.confirmPassword,
                           labelText: Constants.confirmPassword,
                         ),
+                        obscureText: true,
                         validator: (confirmPassword) =>
                             confirmPassword.length <= 7
                                 ? Constants.confirmPasswordError
@@ -141,9 +145,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
           'userId': _userId,
           'latitude': currentLocation.latitude,
           'longitude': currentLocation.longitude,
-          'updatedAt':"",
+          'updatedAt':"1234567890",
 
         }).then((data){
+          _saveValues();
           MyNavigator.goToUserListScreen(context);
         });
 
@@ -151,5 +156,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
         print(e);
       });
     }
+  }
+  _saveValues() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("isLogIn", true);
   }
 }
