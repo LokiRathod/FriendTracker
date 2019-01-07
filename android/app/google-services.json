@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "341189779586",
+    "firebase_url": "https://acoustic-field-182606.firebaseio.com",
+    "project_id": "acoustic-field-182606",
+    "storage_bucket": "acoustic-field-182606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341189779586:android:037528d3c948d0cd",
+        "android_client_info": {
+          "package_name": "com.altorumleren.altorumlerenfriendtracke"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341189779586-a8rsbvff9t9m38i7kmoiuojjvf716shb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altorumleren.altorumlerenfriendtracke",
+            "certificate_hash": "79644cf50205c362ee6a8d603329387c0bc3233e"
+          }
+        },
+        {
+          "client_id": "341189779586-ts88cdok9umktrausmgcn5mg6u03c811.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOMIKz2_SmxOvL23GYZoFbg2KUbDQIv50"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341189779586-ts88cdok9umktrausmgcn5mg6u03c811.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
