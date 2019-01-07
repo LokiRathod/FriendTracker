@@ -36,7 +36,7 @@ class _UserListScreenState extends State<UserListScreen> {
           IconButton(
             tooltip: 'Logout',
             icon: Icon(
-              Icons.add_to_home_screen,
+              Icons.input,
             ),
             onPressed: () {
               FirebaseAuth.instance.signOut().then((value) {
@@ -66,9 +66,10 @@ class _UserListScreenState extends State<UserListScreen> {
                   onTap: () {
                     String lat = document["latitude"].toString();
                     String lng = document["longitude"].toString();
+                    String mail = document["email"].toString();
                     String name = document["name"].toString();
                     Navigator.push(context, new MaterialPageRoute(
-                        builder: (context) => MapScreen(lat,lng,name)),);
+                        builder: (context) => MapScreen(lat,lng,name,mail)),);
                   },
                 );
               }).toList(),
