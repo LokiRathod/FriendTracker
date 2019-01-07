@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
         Duration(seconds: 3),
-        () => UserCredentials().isLoggedIn()
+        () => isLogIn
             ? MyNavigator.goToUserListScreen(context)
             : MyNavigator.goToLogInScreen(context));
   }
